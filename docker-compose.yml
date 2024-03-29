@@ -20,10 +20,6 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     env_file: .env
-    labels:
-      virtual.host: 'app.botsavvy.com.br'
-      virtual.port: '3000'
-      virtual.tls-email: 'paulopitarac@gmail.com'
 
   typebot-viewer:
     image: baptistearno/typebot-viewer:latest
@@ -31,10 +27,6 @@ services:
     ports:
       - '8081:3000'
     env_file: .env
-    labels:
-      virtual.host: 'bot.botsavvy.com.br'
-      virtual.port: '3000'
-      virtual.tls-email: 'paulopitarac@gmail.com'
   
   mail:
     image: bytemark/smtp
@@ -64,20 +56,7 @@ services:
       exit 0;
       "
 
-  caddy-gen:
-    container_name: caddy-gen
-    image: 'wemakeservices/caddy-gen:latest'
-    restart: always
-    volumes:
-      - "/var/run/docker.sock:/tmp/docker.sock:ro"
-      - "${PWD}/.typebot/caddy-certificates:/data/caddy"
-    ports:
-      - '80:80'
-      - '443:443'
-    depends_on:
-      - typebot-builder
-      - typebot-viewer
-
 volumes:
   db-data:
   s3-data:
+  
