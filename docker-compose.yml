@@ -56,6 +56,34 @@ services:
       exit 0;
       "
 
-volumes:
+
+  caddy-gen:
+    container_name: caddy-gen
+    image: 'wemakeservices/caddy-gen:latest'
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - {$PWD}/.typebot/caddy-certificates:/data/caddy
+    ports:
+      - '80:80'
+      - '443:443'
+    depends_on:
+      - typebot-builder
+      - typebot-viewer
+
+  typebot-builder:
+    labels:
+      virtual.host: 'app.botsavvy.com.br' # change to your domain name
+      virtual.port: '3000'
+      virtual.tls-email: 'paulopitarac@gmail.com' # change to your email
+
+  typebot-viewer:
+    labels:
+      virtual.host: 'bot.botsavvy.com.br' # change to your domain name
+      virtual.port: '3000'
+      virtual.tls-email: 'paulopitarac@gmail.com' # change to your email
+
+
+      volumes:
   db-data:
   s3-data:
