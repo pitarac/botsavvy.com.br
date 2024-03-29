@@ -29,7 +29,7 @@ services:
     labels:
       virtual.host: 'app.botsavvy.com.br'
       virtual.port: '3000'
-      virtual.tls-email: 'seuemail@example.com'
+      virtual.tls-email: 'paulopitarac@gmail.com'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     env_file: .env
@@ -40,7 +40,7 @@ services:
     labels:
       virtual.host: 'viewer.botsavvy.com.br'
       virtual.port: '3000'
-      virtual.tls-email: 'seuemail@example.com'
+      virtual.tls-email: 'paulopitarac@gmail.com'
     env_file: .env
   
   mail:
