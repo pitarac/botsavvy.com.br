@@ -84,6 +84,6 @@ services:
       virtual.tls-email: 'paulopitarac@gmail.com' # change to your email
 
 
-      volumes:
+volumes:
   db-data:
   s3-data:
