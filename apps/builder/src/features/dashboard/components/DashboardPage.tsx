@@ -51,7 +51,7 @@ export const DashboardPage = () => {
       setPreCheckoutPlan({
         plan: subscribePlan as 'PRO' | 'STARTER',
         workspaceId: workspace.id,
-        currency: guessIfUserIsEuropean() ? 'eur' : 'usd',
+        currency: guessIfUserIsEuropean() ? 'eur' : 'brl',
       })
     }
   }, [createCustomCheckoutSession, router.query, user, workspace])
