@@ -22,7 +22,7 @@ export const createCheckoutSession = authenticatedProcedure
       email: z.string(),
       company: z.string(),
       workspaceId: z.string(),
-      currency: z.enum(['usd', 'eur']),
+      currency: z.enum(['brl', 'eur']),
       plan: z.enum([Plan.STARTER, Plan.PRO]),
       returnUrl: z.string(),
       vat: z
@@ -120,7 +120,7 @@ export const createCheckoutSession = authenticatedProcedure
 type Props = {
   customerId: string
   workspaceId: string
-  currency: 'usd' | 'eur'
+  currency: 'brl' | 'eur'
   plan: 'STARTER' | 'PRO'
   returnUrl: string
   userId: string

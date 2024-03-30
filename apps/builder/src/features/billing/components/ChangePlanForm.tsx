@@ -69,7 +69,7 @@ export const ChangePlanForm = ({
       workspaceId: workspace.id,
       currency:
         data?.subscription?.currency ??
-        (guessIfUserIsEuropean() ? 'eur' : 'usd'),
+        (guessIfUserIsEuropean() ? 'eur' : 'brl'),
     } as const
     if (workspace.stripeId) {
       updateSubscription({
