@@ -116,13 +116,13 @@ test('plan changes should work', async ({ page }) => {
   await page.click('text=Plan Change Workspace')
   await page.click('text=Settings & Members')
   await page.click('text=Billing & Usage')
-  await expect(page.locator('text="$39"')).toBeVisible()
+  await expect(page.locator('text="R$49"')).toBeVisible()
   await page.click('button >> text=Upgrade >> nth=0')
   await page.getByLabel('Company name').fill('Company LLC')
   await page.getByRole('button', { name: 'Go to checkout' }).click()
   await page.waitForNavigation()
   expect(page.url()).toContain('https://checkout.stripe.com')
-  await expect(page.locator('text=$39 >> nth=0')).toBeVisible()
+  await expect(page.locator('text=R$49 >> nth=0')).toBeVisible()
   const stripeId = await addSubscriptionToWorkspace(
     planChangeWorkspaceId,
     [
@@ -145,7 +145,7 @@ test('plan changes should work', async ({ page }) => {
   await expect(page.getByText('/ 2,000')).toBeVisible()
 
   // Upgrade to PRO
-  await expect(page.locator('text="$89"')).toBeVisible()
+  await expect(page.locator('text="R$98"')).toBeVisible()
   await page.click('button >> text=Upgrade')
   await expect(
     page.locator('text="Workspace PRO plan successfully updated" >> nth=0')
