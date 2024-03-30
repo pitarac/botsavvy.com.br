@@ -202,7 +202,7 @@ test('custom plans should work', async ({ page }) => {
     'Current workspace subscription: Free'
   )
   await createClaimableCustomPlan({
-    currency: 'usd',
+    currency: 'brl',
     price: 239,
     workspaceId: enterpriseWorkspaceId,
     chatsLimit: 100000,
