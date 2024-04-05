@@ -38,7 +38,7 @@ services:
     image: baptistearno/typebot-viewer:latest
     restart: always
     labels:
-      virtual.host: 'viewer.botsavvy.com.br'
+      virtual.host: 'bot.botsavvy.com.br'
       virtual.port: '3000'
       virtual.tls-email: 'paulopitarac@gmail.com'
     env_file: .env
