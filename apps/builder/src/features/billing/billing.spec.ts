@@ -23,7 +23,7 @@ test.beforeAll(async () => {
   await createWorkspaces([
     {
       id: usageWorkspaceId,
-      name: 'Usage Workspace',
+      name: 'Consumo',
       plan: Plan.STARTER,
     },
     {
@@ -32,7 +32,7 @@ test.beforeAll(async () => {
     },
     {
       id: enterpriseWorkspaceId,
-      name: 'Enterprise Workspace',
+      name: 'Plano Coorporativo',
     },
   ])
   await createTypebots([{ id: usageTypebotId, workspaceId: usageWorkspaceId }])
@@ -48,18 +48,18 @@ test.afterAll(async () => {
 
 test('should display valid usage', async ({ page }) => {
   await page.goto('/typebots')
-  await page.click('text=Settings & Members')
-  await page.click('text=Billing & Usage')
+  await page.click('text=Configuração e membros')
+  await page.click('text=Pagamento e uso')
   await expect(page.locator('text="/ 10,000"')).toBeVisible()
-  await page.getByText('Members', { exact: true }).click()
+  await page.getByText('Membros', { exact: true }).click()
   await expect(
-    page.getByRole('heading', { name: 'Members (1/5)' })
+    page.getByRole('heading', { name: 'Membros (1/5)' })
   ).toBeVisible()
-  await page.click('text=Pro workspace', { force: true })
+  await page.click('text=Plano Pro', { force: true })
 
-  await page.click('text=Pro workspace')
-  await page.click('text="Custom workspace"')
-  await page.click('text=Settings & Members')
+  await page.click('text=Plano Pro')
+  await page.click('text="Customizar"')
+  await page.click('text=Pagamento')
   await page.click('text=Billing & Usage')
   await expect(page.locator('text="/ 100,000"')).toBeVisible()
   await expect(page.getByText('Upgrade to Starter')).toBeHidden()
