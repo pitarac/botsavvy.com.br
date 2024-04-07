@@ -36,6 +36,7 @@ const currencySymbols: { [key: string]: string } = {
   THB: '฿',
   UAH: '₴',
   VND: '₫',
+  BRL: 'R$', 
 }
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -141,6 +142,7 @@ const isZeroDecimalCurrency = (currency: string) =>
     'XAF',
     'XOF',
     'XPF',
+    'BRL',
   ].includes(currency)
 
 export default handler

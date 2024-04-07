@@ -11986,7 +11986,7 @@
                   "currency": {
                     "type": "string",
                     "enum": [
-                      "usd",
+                      "BRL",
                       "eur"
                     ]
                   },
@@ -12369,7 +12369,7 @@
                               "type": "string",
                               "enum": [
                                 "eur",
-                                "usd"
+                                "BRL"
                               ]
                             },
                             "cancelDate": {

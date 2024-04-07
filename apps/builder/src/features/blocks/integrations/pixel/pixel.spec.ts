@@ -27,7 +27,7 @@ test.describe('Pixel block', () => {
     await page.getByRole('button', { name: 'Add parameter' }).click()
     await page.getByRole('button', { name: 'Select key' }).click()
     await page.getByRole('menuitem', { name: 'currency' }).click()
-    await page.getByPlaceholder('Value').fill('USD')
+    await page.getByPlaceholder('Value').fill('BRL')
     await page.getByRole('button', { name: 'Test' }).click()
     await expect(
       page.getByText('Pixel is not enabled in Preview mode').nth(1)
