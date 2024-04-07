@@ -14,7 +14,7 @@ export const createCustomCheckoutSession = authenticatedProcedure
       path: '/v1/billing/subscription/custom-checkout',
       protect: true,
       summary:
-        'Create custom checkout session to make a workspace pay for a custom plan',
+        'Crie uma sessão de checkout personalizada para fazer um espaço de trabalho pagar por um plano personalizado',
       tags: ['Billing'],
     },
   })

@@ -13,7 +13,7 @@ export const createCheckoutSession = authenticatedProcedure
       method: 'POST',
       path: '/v1/billing/subscription/checkout',
       protect: true,
-      summary: 'Create checkout session to create a new subscription',
+      summary: 'Criar sessão de checkout para criar uma nova assinatura',
       tags: ['Billing'],
     },
   })
