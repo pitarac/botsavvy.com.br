@@ -38,7 +38,7 @@ export const addSubscriptionToWorkspace = async (
     customer: stripeId,
     items,
     default_payment_method: paymentId,
-    currency: 'usd',
+    currency: 'brl',
   })
   await stripe.customers.update(stripeId, {
     invoice_settings: { default_payment_method: paymentId },
