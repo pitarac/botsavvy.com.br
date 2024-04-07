@@ -69,7 +69,7 @@ export const ChangePlanForm = ({
       workspaceId: workspace.id,
       currency:
         data?.subscription?.currency ??
-        (guessIfUserIsEuropean() ? 'eur' : 'brl'),
+        (guessIfUserIsEuropean() ? 'brl' : 'brl'),
     } as const
     if (workspace.stripeId) {
       updateSubscription({
@@ -96,8 +96,8 @@ export const ChangePlanForm = ({
   if (currentRole !== WorkspaceRole.ADMIN)
     return (
       <Text>
-        Only workspace admins can change the subscription plan. Contact your
-        workspace admin to change the plan.
+        Somente administradores do workspace podem alterar o plano de assinatura. Entre em contato com seu
+        administrador do espaço de trabalho para alterar o plano.
       </Text>
     )
 

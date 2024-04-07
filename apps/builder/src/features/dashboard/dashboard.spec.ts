@@ -6,7 +6,7 @@ import { createTypebots } from '@typebot.io/playwright/databaseActions'
 
 test('folders navigation should work', async ({ page }) => {
   await page.goto('/typebots')
-  const createFolderButton = page.locator('button:has-text("Create a folder")')
+  const createFolderButton = page.locator('button:has-text("Criar folha")')
   await expect(createFolderButton).not.toBeDisabled()
   await createFolderButton.click()
   await page.fill('input[value="New folder"]', 'My folder #1')

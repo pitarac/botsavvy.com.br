@@ -106,7 +106,7 @@ export const InvoicesList = ({ workspaceId }: Props) => {
 }
 
 const getFormattedPrice = (amount: number, currency: string) => {
-  const formatter = new Intl.NumberFormat('en-US', {
+  const formatter = new Intl.NumberFormat('pt_BR', {
     style: 'currency',
     currency,
   })

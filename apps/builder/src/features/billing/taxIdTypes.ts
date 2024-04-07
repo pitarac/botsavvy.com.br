@@ -1,5 +1,19 @@
 export const taxIdTypes = [
   {
+    type: 'br_cnpj',
+    code: 'BR CNPJ',
+    name: 'Brazil',
+    emoji: '🇧🇷',
+    placeholder: '12.345.678/0001-23',
+  },
+  {
+    type: 'br_cpf',
+    code: 'BR CPF',
+    name: 'Brazil',
+    emoji: '🇧🇷',
+    placeholder: '123.456.789-01',
+  },
+  {
     type: 'ae_trn',
     code: 'AE TRN',
     name: 'United Arab Emirates',
@@ -27,20 +41,7 @@ export const taxIdTypes = [
     emoji: '🇧🇬',
     placeholder: 'BG123456789',
   },
-  {
-    type: 'br_cnpj',
-    code: 'BR CNPJ',
-    name: 'Brazil',
-    emoji: '🇧🇷',
-    placeholder: '12.345.678/0001-23',
-  },
-  {
-    type: 'br_cpf',
-    code: 'BR CPF',
-    name: 'Brazil',
-    emoji: '🇧🇷',
-    placeholder: '123.456.789-01',
-  },
+ 
   {
     type: 'ca_bn',
     code: 'CA BN',

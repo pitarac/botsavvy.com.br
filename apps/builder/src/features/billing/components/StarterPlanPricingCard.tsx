@@ -16,7 +16,7 @@ import { T, useTranslate } from '@tolgee/react'
 
 type Props = {
   currentPlan: Plan
-  currency?: 'eur' | 'usd'
+  currency?: 'eur' | 'usd'| 'brl'
   isLoading?: boolean
   onPayClick: () => void
 }
