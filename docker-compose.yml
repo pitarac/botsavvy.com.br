@@ -47,7 +47,11 @@ services:
     image: bytemark/smtp
     restart: always
 
-  minio:
+   minio:
+    labels:
+      virtual.host: 'storage.botsavvy.com' # change to your domain
+      virtual.port: '9000'
+      virtual.tls-email: 'paulopitarac@gmail.com # change to your email
     image: minio/minio
     command: server /data
     ports:
@@ -56,8 +60,8 @@ services:
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     volumes:
-      - s3-data:/data
-  
+      - s3_data:/data
+  # This service just make sure a bucket with the right policies is created
   createbuckets:
     image: minio/mc
     depends_on:

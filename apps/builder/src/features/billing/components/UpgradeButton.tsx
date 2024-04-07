@@ -7,7 +7,7 @@ import { useTranslate } from '@tolgee/react'
 
 type Props = {
   limitReachedType?: string
-  excludedPlans?: ('STARTER' | 'PRO')[]
+  excludedPlans?: ('Inicial' | 'PRO')[]
 } & ButtonProps
 
 export const UpgradeButton = ({
