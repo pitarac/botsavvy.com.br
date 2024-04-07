@@ -18,7 +18,7 @@ test.describe.parallel('Settings page', () => {
       await expect(page.getByPlaceholder('Type your answer...')).toHaveValue(
         'Baptiste'
       )
-      await page.click('text=Prefill input')
+      await page.click('text=Pré-preenchido')
       await page.click('text=Theme')
       await expect(
         page.locator(
@@ -36,8 +36,8 @@ test.describe.parallel('Settings page', () => {
       })
       await page.goto(`/typebots/${typebotId}/settings`)
       await expect(
-        page.locator('a:has-text("Made with Typebot")')
-      ).toHaveAttribute('href', 'https://www.typebot.io/?utm_source=litebadge')
+        page.locator('a:has-text("Made with Botsavvy")')
+      ).toHaveAttribute('href', 'https://www.botsavvy.com.br')
       await page.click('button:has-text("Typing")')
       await page.fill('[data-testid="speed"] input', '350')
       await page.fill('[data-testid="max-delay"] input', '1.5')
