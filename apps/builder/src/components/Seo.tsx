@@ -11,7 +11,7 @@ const getOrigin = () => {
 
 export const Seo = ({
   title,
-  description = 'Create and publish conversational forms that collect 4 times more answers and feel native to your product',
+  description = 'Atenda seus clientes de forma continua e 24h por dia',
   imagePreviewUrl = `${getOrigin()}/images/og.png`,
 }: {
   title: string
@@ -19,7 +19,7 @@ export const Seo = ({
   currentUrl?: string
   imagePreviewUrl?: string
 }) => {
-  const formattedTitle = `${title} | Typebot`
+  const formattedTitle = `${title} | BotSavvy`
 
   return (
     <Head>
