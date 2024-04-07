@@ -119,7 +119,7 @@ test('plan changes should work', async ({ page }) => {
   await expect(page.locator('text="R$49"')).toBeVisible()
   await page.click('button >> text=Upgrade >> nth=0')
   await page.getByLabel('Company name').fill('Company LLC')
-  await page.getByRole('button', { name: 'Go to checkout' }).click()
+  await page.getByRole('button', { name: 'Pagamento' }).click()
   await page.waitForNavigation()
   expect(page.url()).toContain('https://checkout.stripe.com')
   await expect(page.locator('text=R$49 >> nth=0')).toBeVisible()
@@ -139,8 +139,8 @@ test('plan changes should work', async ({ page }) => {
 
   // Update plan with additional quotas
   await page.goto('/typebots')
-  await page.click('text=Settings & Members')
-  await page.click('text=Billing & Usage')
+  await page.click('text=Configuração')
+  await page.click('text=Pagamento e consumo')
   await expect(page.locator('text="/ 2,000"')).toBeVisible()
   await expect(page.getByText('/ 2,000')).toBeVisible()
 
@@ -154,7 +154,7 @@ test('plan changes should work', async ({ page }) => {
   // Go to customer portal
   await Promise.all([
     page.waitForNavigation(),
-    page.click('text="Billing portal"'),
+    page.click('text="Pagamento"'),
   ])
   await expect(page.getByText('$39.00')).toBeVisible({
     timeout: 10000,
@@ -162,7 +162,7 @@ test('plan changes should work', async ({ page }) => {
   await expect(page.getByText('$50.00')).toBeVisible({
     timeout: 10000,
   })
-  await expect(page.locator('text="Add payment method"')).toBeVisible()
+  await expect(page.locator('text="Adicione uma forma de pagamento"')).toBeVisible()
   await cancelSubscription(stripeId)
 
   // Cancel subscription
