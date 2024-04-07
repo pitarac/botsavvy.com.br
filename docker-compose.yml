@@ -46,12 +46,11 @@ services:
   mail:
     image: bytemark/smtp
     restart: always
-
-   minio:
+  minio:
     labels:
       virtual.host: 'storage.botsavvy.com' # change to your domain
       virtual.port: '9000'
-      virtual.tls-email: 'paulopitarac@gmail.com # change to your email
+      virtual.tls-email: 'paulopitarac@gmail.com' # change to your email
     image: minio/minio
     command: server /data
     ports:
