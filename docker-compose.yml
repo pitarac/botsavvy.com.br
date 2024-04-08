@@ -48,7 +48,7 @@ services:
     restart: always
   minio:
     labels:
-      virtual.host: 'storage.botsavvy.com' # change to your domain
+      virtual.host: 'storage.botsavvy.com.br' # change to your domain
       virtual.port: '9000'
       virtual.tls-email: 'paulopitarac@gmail.com' # change to your email
     image: minio/minio
