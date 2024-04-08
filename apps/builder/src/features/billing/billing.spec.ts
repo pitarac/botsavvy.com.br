@@ -28,7 +28,7 @@ test.beforeAll(async () => {
     },
     {
       id: planChangeWorkspaceId,
-      name: 'Plan Change Workspace',
+      name: 'Espaço de trabalho de mudança de plano',
     },
     {
       id: enterpriseWorkspaceId,
@@ -60,19 +60,19 @@ test('should display valid usage', async ({ page }) => {
   await page.click('text=Plano Pro')
   await page.click('text="Customizar"')
   await page.click('text=Pagamento')
-  await page.click('text=Billing & Usage')
+  await page.click('text=Pagamento e uso')
   await expect(page.locator('text="/ 100,000"')).toBeVisible()
-  await expect(page.getByText('Upgrade to Starter')).toBeHidden()
-  await expect(page.getByText('Upgrade to Pro')).toBeHidden()
-  await expect(page.getByText('Need custom limits?')).toBeHidden()
-  await page.getByText('Members', { exact: true }).click()
+  await expect(page.getByText('Upgrade Plano Basic')).toBeHidden()
+  await expect(page.getByText('Upgrade Plano PRO')).toBeHidden()
+  await expect(page.getByText('Precisa customizar?')).toBeHidden()
+  await page.getByText('Membros', { exact: true }).click()
   await expect(
     page.getByRole('heading', { name: 'Members (1/20)' })
   ).toBeVisible()
-  await page.click('text=Custom workspace', { force: true })
+  await page.click('text=Customizar', { force: true })
 
-  await page.click('text=Custom workspace')
-  await page.click('text="Free workspace"')
+  await page.click('text=Persnalizar')
+  await page.click('text="Plano Grátis"')
   await page.click('text=Settings & Members')
   await page.click('text=Billing & Usage')
   await expect(page.locator('text="/ 200"')).toBeVisible()
@@ -156,10 +156,10 @@ test('plan changes should work', async ({ page }) => {
     page.waitForNavigation(),
     page.click('text="Pagamento"'),
   ])
-  await expect(page.getByText('$39.00')).toBeVisible({
+  await expect(page.getByText('R$49.00')).toBeVisible({
     timeout: 10000,
   })
-  await expect(page.getByText('$50.00')).toBeVisible({
+  await expect(page.getByText('R$90.00')).toBeVisible({
     timeout: 10000,
   })
   await expect(page.locator('text="Adicione uma forma de pagamento"')).toBeVisible()
@@ -188,8 +188,8 @@ test('should display invoices', async ({ page }) => {
   await page.click('text=Billing & Usage')
   await expect(page.locator('text="Invoices"')).toBeVisible()
   await expect(page.locator('tr')).toHaveCount(4)
-  await expect(page.getByText('$39.00')).toBeVisible()
-  await expect(page.getByText('$50.00')).toBeVisible()
+  await expect(page.getByText('R$49.90')).toBeVisible()
+  await expect(page.getByText('$90.00')).toBeVisible()
 })
 
 test('custom plans should work', async ({ page }) => {
@@ -214,6 +214,6 @@ test('custom plans should work', async ({ page }) => {
 
   await page.goto('/typebots?claimCustomPlan=true')
 
-  await expect(page.getByRole('list').getByText('$239.00')).toBeVisible()
+  await expect(page.getByRole('list').getByText('R$239.00')).toBeVisible()
   await expect(page.getByText('Subscribe to Acme custom plan')).toBeVisible()
 })
