@@ -22,7 +22,7 @@ export const createCheckoutSession = authenticatedProcedure
       email: z.string(),
       company: z.string(),
       workspaceId: z.string(),
-      currency: z.enum(['brl', 'eur']),
+      currency: z.enum(['brl', 'usd']),
       plan: z.enum([Plan.STARTER, Plan.PRO]),
       returnUrl: z.string(),
       vat: z
