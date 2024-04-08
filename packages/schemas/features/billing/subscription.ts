@@ -5,7 +5,7 @@ export const subscriptionSchema = z.object({
     start: z.date(),
     end: z.date(),
   }),
-  currency: z.enum(['eur', 'usd']),
+  currency: z.enum(['brl', 'usd']),
   cancelDate: z.date().optional(),
   status: z.enum(['active', 'past_due']),
 })

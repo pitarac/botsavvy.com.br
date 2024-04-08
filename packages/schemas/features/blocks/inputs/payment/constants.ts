@@ -8,5 +8,5 @@ export const defaultPaymentInputOptions = {
   provider: PaymentProvider.STRIPE,
   labels: { button: 'Pay', success: 'Success' },
   retryMessageContent: 'Payment failed. Please, try again.',
-  currency: 'USD',
+  currency: 'BRL',
 } as const satisfies PaymentInputBlock['options']

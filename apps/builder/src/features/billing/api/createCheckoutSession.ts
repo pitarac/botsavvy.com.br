@@ -120,7 +120,7 @@ export const createCheckoutSession = authenticatedProcedure
 type Props = {
   customerId: string
   workspaceId: string
-  currency: 'brl' | 'eur'
+  currency: 'brl' | 'brl'
   plan: 'STARTER' | 'PRO'
   returnUrl: string
   userId: string
