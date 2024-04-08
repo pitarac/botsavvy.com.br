@@ -54,7 +54,7 @@ export const StarterPlanPricingCard = ({
               <T
                 keyName="billing.pricingCard.heading"
                 params={{
-                  strong: <chakra.span color="orange.400">Starter</chakra.span>,
+                  strong: <chakra.span color="orange.400">Básico</chakra.span>,
                 }}
               />
             </Heading>
@@ -88,7 +88,7 @@ export const StarterPlanPricingCard = ({
             t('billing.pricingCard.starter.brandingRemoved'),
             t('billing.pricingCard.starter.fileUploadBlock'),
             t('billing.pricingCard.starter.createFolders'),
-            'Direct priority support',
+            'Suporte Prioritario',
           ]}
         />
       </Stack>
