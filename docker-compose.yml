@@ -22,7 +22,7 @@ services:
       - POSTGRES_PASSWORD=typebot
 
   typebot-builder:
-    image: baptistearno/typebot-builder:latest
+    build: .  # Aponta para o diretório atual onde o docker-compose.yml e Dockerfile estão localizados
     restart: always
     depends_on:
       - typebot-db
@@ -35,7 +35,7 @@ services:
     env_file: .env
 
   typebot-viewer:
-    image: baptistearno/typebot-viewer:latest
+    build: .  # Aponta para o diretório atual onde o docker-compose.yml e Dockerfile estão localizados
     restart: always
     labels:
       virtual.host: 'bot.botsavvy.com.br'

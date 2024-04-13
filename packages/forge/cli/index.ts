@@ -23,7 +23,7 @@ type PromptResult = {
 }
 
 const main = async () => {
-  p.intro('Create a new Typebot integration block')
+  p.intro('Create a new BotSavvy integration block')
   const { name, id } = await p.group(
     {
       name: () =>
